@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Room Request System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">✚ CarePoint Hospital</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#create">Create Request</a>
+        <a href="#requests">Requests</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div>
+        <p class="tagline">HOSPITAL MANAGEMENT SYSTEM</p>
+        <h1>Hospital Room<br>Request System</h1>
+        <p>Manage room supplies and hospital requests easily.</p>
+        <a href="#create" class="main-btn">Create New Request</a>
+    </div>
+    <div class="hero-icon">✚</div>
+</section>
+
+<main class="container">
+    <section class="form-card" id="create">
+        <h2>Create New Request</h2>
+        <p class="muted">Enter the details below to submit a request.</p>
+
+        <form id="requestForm">
+            <label for="room">Room Number</label>
+            <input type="text" id="room" placeholder="e.g. 204" required>
+
+            <label for="age">Patient Age</label>
+            <input type="number" id="age" placeholder="Enter patient age"
+                   min="0" max="120" required>
+
+            <label for="supplies">Required Supplies</label>
+            <input type="text" id="supplies"
+                   placeholder="e.g. Gloves, medicines" required>
+
+            <label for="priority">Priority</label>
+            <select id="priority" required>
+                <option value="Normal">Normal</option>
+                <option value="High">High</option>
+                <option value="Urgent">Urgent</option>
+            </select>
+
+            <label for="notes">Additional Notes</label>
+            <textarea id="notes" placeholder="Enter extra details (optional)"></textarea>
+
+            <button type="submit" class="submit-btn">Submit Request</button>
+            <p id="message" role="status"></p>
+        </form>
+    </section>
+
+    <section class="requests-card" id="requests">
+        <div class="section-heading">
+            <div>
+                <h2>Recent Requests</h2>
+                <p class="muted">Track and manage submitted requests.</p>
+            </div>
+            <span class="total" id="totalRequests">0 Requests</span>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <span>Total</span>
+                <h3 id="totalCount">0</h3>
+            </div>
+            <div class="stat-box">
+                <span>Pending</span>
+                <h3 id="pendingCount">0</h3>
+            </div>
+            <div class="stat-box">
+                <span>Delivered</span>
+                <h3 id="deliveredCount">0</h3>
+            </div>
+        </div>
+
+        <div id="requestList">
+            <div class="empty">
+                <div class="empty-icon">📋</div>
+                <h3>No requests yet</h3>
+                <p>Submit your first request using the form.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 CarePoint Hospital | Hospital Room Request System</p>
+    <p>Student Project • HTML, CSS & JavaScript</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+  
